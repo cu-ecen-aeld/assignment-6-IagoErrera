@@ -19,6 +19,9 @@ if [ $local_conf_info -ne 0 ];then
 	echo ${CONFLINE} >> conf/local.conf
 	echo "BB_NUMBER_THREADS = \"2\"" >> conf/local.conf
 	echo "PARALLEL_MAKE = \"-j 2\"" >> conf/local.conf	
+	echo "TUNE_FEATURES = \"aarch64 cortexa57\"" >> conf/local.conf
+	echo "DEFAULTTUNE = \"cortexa57\"" >> conf/local.conf
+
 else
 	echo "${CONFLINE} already exists in the local.conf file"
 fi
