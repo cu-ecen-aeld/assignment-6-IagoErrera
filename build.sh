@@ -17,7 +17,8 @@ local_conf_info=$?
 if [ $local_conf_info -ne 0 ];then
 	echo "Append ${CONFLINE} in the local.conf file"
 	echo ${CONFLINE} >> conf/local.conf
-	
+	echo "BB_NUMBER_THREADS = \"2\"" >> conf/local.conf
+	echo "PARALLEL_MAKE = \"-j 2\"" >> conf/local.conf	
 else
 	echo "${CONFLINE} already exists in the local.conf file"
 fi
