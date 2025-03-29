@@ -39,5 +39,5 @@ fi
 
 set -e
 bitbake core-image-aesd -c cleansstate
-bitbake core-image-aesd -c cleansall
+bitbake core-image-aesd -c cleasall
 bitbake core-image-aesd
