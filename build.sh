@@ -22,7 +22,7 @@ if [ $local_conf_info -ne 0 ];then
 	echo "TUNE_FEATURES = \"aarch64 cortexa57\"" >> conf/local.conf
 	echo "DEFAULTTUNE = \"cortexa57\"" >> conf/local.conf
 	echo "DL_DIR = \"/yocto/downloads\"" >> conf/local.conf
-	echo "SSTATE_DIR = \ "/yocto/sstate-cache\"" >> conf/local.conf
+	echo "SSTATE_DIR =  \"/yocto/sstate-cache\"" >> conf/local.conf
 
 else
 	echo "${CONFLINE} already exists in the local.conf file"
