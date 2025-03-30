@@ -20,8 +20,8 @@ jobs:
             timeout-minutes: 600
             run: |
                docker run --rm \
-				 --mount type=bind,src=/home/iago/.yocto/downloads,dst=/downloads \
-				 --mount type=bind,src=/home/iago/.yocto/sstate-cache,dst=/sstate-cache \	
+		 --mount type=bind,src=$HOME/.yocto/downloads,dst=/downloads \
+		 --mount type=bind,src=$HOME/.yocto/sstate-cache,dst=/sstate-cache \	
                  -v $SSH_AUTH_SOCK:/ssh-agent -e SSH_AUTH_SOCK=/ssh-agent \
                  -e GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no" \
                  -v ${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE} \
