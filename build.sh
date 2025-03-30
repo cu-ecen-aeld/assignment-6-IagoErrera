@@ -21,6 +21,8 @@ if [ $local_conf_info -ne 0 ];then
 	echo "PARALLEL_MAKE = \"-j 2\"" >> conf/local.conf	
 	echo "TUNE_FEATURES = \"aarch64 cortexa57\"" >> conf/local.conf
 	echo "DEFAULTTUNE = \"cortexa57\"" >> conf/local.conf
+	echo "DL_DIR = \"/downloads\"" >> conf/local.conf
+	echo "SSTATE_DIR = \ "/sstate-cache\"" >> conf/local.conf
 
 else
 	echo "${CONFLINE} already exists in the local.conf file"
@@ -38,6 +40,5 @@ else
 fi
 
 set -e
-bitbake core-image-aesd -c cleansstate
-bitbake core-image-aesd -c cleanall
+
 bitbake core-image-aesd
