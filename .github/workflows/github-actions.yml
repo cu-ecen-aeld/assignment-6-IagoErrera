@@ -21,7 +21,7 @@ jobs:
             run: |
                docker run --rm \
 		 --mount type=bind,src=${GITHUB_WORKSPACE}/../../../../../.yocto/downloads,dst=/downloads \
-		 --mount type=bind,src=${GITHUB_WORKSPACE}/../../../../../.yocto/sstate-cache,dst=/sstate-cache \	
+		 --mount type=bind,src=${GITHUB_WORKSPACE}/../../../../../.yocto/sstate-cache,dst=/sstate-cache \
                  -v $SSH_AUTH_SOCK:/ssh-agent -e SSH_AUTH_SOCK=/ssh-agent \
                  -e GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no" \
                  -v ${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE} \
