@@ -20,7 +20,7 @@ jobs:
             timeout-minutes: 600
             run: |
                docker run --rm \
-                 --mount type=bind,src=${GITHUB_WORKSPACE}/../../../../../../../../.yocto,dst=/yocto \
+#                 --mount type=bind,src=${GITHUB_WORKSPACE}/../../../../../../../../.yocto,dst=/yocto \
                  -v $SSH_AUTH_SOCK:/ssh-agent -e SSH_AUTH_SOCK=/ssh-agent \
                  -e GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no" \
                  -v ${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE} \
