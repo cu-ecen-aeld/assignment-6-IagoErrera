@@ -17,8 +17,8 @@ local_conf_info=$?
 if [ $local_conf_info -ne 0 ];then
 	echo "Append ${CONFLINE} in the local.conf file"
 	echo ${CONFLINE} >> conf/local.conf
-	echo "BB_NUMBER_THREADS = \"1\"" >> conf/local.conf
-	echo "PARALLEL_MAKE = \"-j 1\"" >> conf/local.conf	
+	echo "BB_NUMBER_THREADS = \"3\"" >> conf/local.conf
+	echo "PARALLEL_MAKE = \"-j 3\"" >> conf/local.conf	
 	echo "TUNE_FEATURES = \"aarch64 cortexa57\"" >> conf/local.conf
 	echo "DEFAULTTUNE = \"cortexa57\"" >> conf/local.conf
 	echo "DL_DIR = \"/yocto/downloads\"" >> conf/local.conf
@@ -41,7 +41,8 @@ fi
 
 set -e
 
-rm -rf /yocto/*
+rm -rf /yocto/downloads
+rm -rf /yocto/sstate-cache
 rm -rf tmp
 
 bitbake core-image-aesd -c cleansstate
