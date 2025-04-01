@@ -41,6 +41,9 @@ fi
 
 set -e
 
+rm -rf /yocto/*
+rm -rf tmp
+
 bitbake core-image-aesd -c cleansstate
 bitbake core-image-aesd -c cleanall
 
