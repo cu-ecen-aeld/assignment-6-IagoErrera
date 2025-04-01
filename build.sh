@@ -2,7 +2,7 @@
 # Script to build image for qemu.
 # Author: Siddhant Jajoo.
 
-rm -rf build
+#rm -rf build
 
 git submodule init
 git submodule sync
