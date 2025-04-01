@@ -41,13 +41,7 @@ fi
 
 set -e
 
-bitbake perl -c cleansstate
-bitbake perl -c cleanall
-
-bitbake re2c -c cleansstate
-bitbake re2c -c cleanall
-
-bitbake binutils -c cleansstate
-bitbake binutils -c cleanall
+bitbake core-image-aesd -c cleansstate
+bitbake core-image-aesd -c cleanall
 
 bitbake core-image-aesd
