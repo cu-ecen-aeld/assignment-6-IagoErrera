@@ -17,8 +17,8 @@ local_conf_info=$?
 if [ $local_conf_info -ne 0 ];then
 	echo "Append ${CONFLINE} in the local.conf file"
 	echo ${CONFLINE} >> conf/local.conf
-	echo "BB_NUMBER_THREADS = \"2\"" >> conf/local.conf
-	echo "PARALLEL_MAKE = \"-j 2\"" >> conf/local.conf	
+	echo "BB_NUMBER_THREADS = \"1\"" >> conf/local.conf
+	echo "PARALLEL_MAKE = \"-j 1\"" >> conf/local.conf	
 	echo "TUNE_FEATURES = \"aarch64 cortexa57\"" >> conf/local.conf
 	echo "DEFAULTTUNE = \"cortexa57\"" >> conf/local.conf
 	echo "DL_DIR = \"/yocto/downloads\"" >> conf/local.conf
