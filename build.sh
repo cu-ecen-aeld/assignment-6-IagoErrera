@@ -23,7 +23,7 @@ if [ $local_conf_info -ne 0 ];then
 	echo "DEFAULTTUNE = \"cortexa57\"" >> conf/local.conf
 	echo "DL_DIR = \"/yocto/downloads\"" >> conf/local.conf
 	echo "SSTATE_DIR =  \"/yocto/sstate-cache\"" >> conf/local.conf
-	echo "TMPDIR =  \"/yocto/asssignment-6-tmp\"" >> conf/local.conf
+	#echo "TMPDIR =  \"/yocto/asssignment-6-tmp\"" >> conf/local.conf
 else
 	echo "${CONFLINE} already exists in the local.conf file"
 fi
@@ -40,5 +40,14 @@ else
 fi
 
 set -e
+
+bitbake perl -c cleansstate
+bitbake perl -c cleanall
+
+bitbake re2c -c cleansstate
+bitbake re2c -c cleanall
+
+bitbake binutils -c cleansstate
+bitbake binutils -c cleanall
 
 bitbake core-image-aesd
