@@ -2,7 +2,7 @@
 # Script to build image for qemu.
 # Author: Siddhant Jajoo.
 
-rm -rf build
+#rm -rf build
 
 git submodule init
 git submodule sync
@@ -43,11 +43,11 @@ fi
 
 set -e
 
-rm -rf /yocto/downloads
-rm -rf /yocto/sstate-cache
-rm -rf tmp
+#rm -rf /yocto/downloads
+#rm -rf /yocto/sstate-cache
+#rm -rf tmp
 
-bitbake core-image-aesd -c cleansstate
-bitbake core-image-aesd -c cleanall
+#bitbake core-image-aesd -c cleansstate
+#bitbake core-image-aesd -c cleanall
 
 bitbake core-image-aesd
